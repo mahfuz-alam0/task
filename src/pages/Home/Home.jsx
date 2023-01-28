@@ -8,7 +8,7 @@ const Home = () => {
     const [selectors, setSelectors] = React.useState();
 
     React.useEffect(() => {
-        fetch('http://localhost:5000/select_options')
+        fetch('https://job-task-server-hasibul240.vercel.app/select_options')
             .then(res => res.json())
             .then(data => setSelectors(data))
     }, [])
@@ -23,7 +23,7 @@ const Home = () => {
 
         const info = { name, select, terms }
 
-        fetch("http://localhost:5000/add_user", {
+        fetch("https://job-task-server-hasibul240.vercel.app/add_user", {
             method: "POST",
             headers: { 'content-type': 'application/json', },
             body: JSON.stringify(info)

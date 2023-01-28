@@ -8,7 +8,7 @@ const Editpage = () => {
     const [users, setUsers] = React.useState();
 
     React.useEffect(() => {
-        fetch('http://localhost:5000/select_options')
+        fetch('https://job-task-server-hasibul240.vercel.app/select_options')
             .then(res => res.json())
             .then(data => setSelectors(data))
     }, [])
@@ -30,7 +30,7 @@ const Editpage = () => {
 
         const info = { name, select }
 
-        fetch(`http://localhost:5000/edit_user/${users[0]?._id}`, {
+        fetch(`https://job-task-server-hasibul240.vercel.app/edit_user/${users[0]?._id}`, {
             method: "PATCH",
             headers: { 'content-type': 'application/json', },
             body: JSON.stringify(info)

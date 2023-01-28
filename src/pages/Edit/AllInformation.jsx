@@ -8,13 +8,13 @@ const AllInformation = () => {
     const [users, setUsers] = React.useState();
 
     React.useEffect(() => {
-        fetch('http://localhost:5000/select_options')
+        fetch('https://job-task-server-hasibul240.vercel.app/select_options')
             .then(res => res.json())
             .then(data => setSelectors(data))
     }, [])
 
     React.useEffect(() => {
-        fetch("http://localhost:5000/users", {})
+        fetch("https://job-task-server-hasibul240.vercel.app/users", {})
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])
@@ -28,7 +28,7 @@ const AllInformation = () => {
 
         const info = { name, select, terms }
 
-        fetch("http://localhost:5000/add_user", {
+        fetch("http://https://job-task-server-hasibul240.vercel.app/add_user", {
             method: "PATCH",
             headers: { 'content-type': 'application/json', },
             body: JSON.stringify(info)

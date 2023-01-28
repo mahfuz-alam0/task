@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/edit-info/:id",
-        loader: ({ params }) => fetch(`http://localhost:5000/user/${params.id}`),
+        loader: ({ params }) => fetch(`https://job-task-server-hasibul240.vercel.app/user/${params.id}`),
         element: <Editpage></Editpage>
     },
     {
